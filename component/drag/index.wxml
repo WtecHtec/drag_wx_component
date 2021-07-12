@@ -1,0 +1,15 @@
+
+<view class="drag_main">
+    <block wx:for="{{ dragList }}" wx:key="index">
+        <view class="drag_place" style="height: {{ drapPlaceIndex === index ?  drapPlaceHeight  + 'px' : '0' }}"></view>
+        <view 
+        class="drag_block_{{index}} {{ dragIndex === index ? 'drag_active drag_active-dec' : ''}} "
+        style="top: {{ dragIndex === index ? drapTop + 'px' : 0 }};"
+        bindlongpress="bindStartDrag" 
+        bindtouchend="bindEndDrag"
+        bindtouchmove="bindMoveDrag"
+        data-index="{{index}}" >
+            <slot name="drag_{{index}}"></slot> 
+        </view>
+    </block>
+</view>

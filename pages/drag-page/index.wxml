@@ -1,0 +1,26 @@
+<!--pages/drag-page/index.wxml-->
+<!-- <text>pages/drag-page/index.wxml</text>
+<view class="drag_main">
+    <block wx:for="{{ dragList }}" wx:key="*this">
+        <view class="drag_place" style="height: {{ drapPlaceIndex === index ?  drapPlaceHeight  + 'px' : '0' }}"></view>
+        <view 
+        class="drag_block_{{index}} {{ dragIndex === index ? 'drag_active drag_active-dec' : ''}} "
+        style="transform: translateY({{ dragIndex === index ? drapTop + 'px' : 0 }});"
+        bindlongpress="bindStartDrag" 
+        bindtouchend="bindEndDrag"
+        bindtouchmove="bindMoveDrag"
+        data-index="{{index}}" >
+          <view class="block1">
+            {{item.name}} 
+          </view>
+              
+        </view>
+    </block>
+</view> -->
+<drag-com dragList="{{ dragList }}" bindEndDrag="bindEndDrag">
+    <block wx:for="{{ dragList }}" wx:key="*this">
+        <view class="block1 {{ item.type === 2 ? 'card' : '' }} " slot="drag_{{index}}">
+            {{item.name}} 
+        </view>
+    </block>
+</drag-com>

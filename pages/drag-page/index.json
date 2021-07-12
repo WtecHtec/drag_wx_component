@@ -1,0 +1,6 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "drag-com": "../../component/drag/index"
+  }
+}
